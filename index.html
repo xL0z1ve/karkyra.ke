@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каркыра — бронь столов онлайн</title>
+<meta name="description" content="Кафе Каркыра: забронируйте стол онлайн, выберите дату, время и количество гостей.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23d62839'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23f6b800' font-family='serif'%3EК%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" id="brand"></a>
+    <nav class="nav">
+      <a href="#book">Бронь</a>
+      <a href="#menu">Меню</a>
+      <a href="#contacts">Контакты</a>
+      <button class="pill" id="myBtn" type="button">Мои брони<span class="badge-dot hidden" id="myBadge"></span></button>
+    </nav>
+  </div>
+  <div class="orn"></div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1 class="rainbow" id="heroName">Каркыра</h1>
+    <p id="tagline"></p>
+    <div class="chips" id="heroChips"></div>
+  </div>
+
+  <section id="book">
+    <div class="wrap">
+      <h2 class="sec">Бронь стола</h2>
+      <p class="sec-sub">Выберите дату, время и количество гостей — затем нажмите на стол, чтобы узнать, свободен ли он.</p>
+      <div class="grid2">
+        <div class="stack">
+          <div class="card">
+            <div class="step"><i>1</i> Дата</div>
+            <div class="cal-head">
+              <button class="icon-btn" id="prevM" type="button" aria-label="Предыдущий месяц">‹</button>
+              <div class="ttl" id="calTitle"></div>
+              <button class="icon-btn" id="nextM" type="button" aria-label="Следующий месяц">›</button>
+            </div>
+            <div class="cal-sel"><select id="selMonth" aria-label="Месяц"></select><select id="selYear" aria-label="Год"></select></div>
+            <div class="cal" id="cal"></div>
+            <div class="picked-date" id="pickedDate"></div>
+          </div>
+          <div class="card">
+            <div class="step"><i>2</i> Время</div>
+            <div class="slots" id="slots"></div>
+            <div class="hint" id="slotHint"></div>
+          </div>
+          <div class="card">
+            <div class="step"><i>3</i> Сколько гостей</div>
+            <div class="stepper"><button type="button" id="gMinus" aria-label="Меньше">−</button><output id="gCount">2</output><button type="button" id="gPlus" aria-label="Больше">+</button><span>чел.</span></div>
+            <div class="hint">До 6 гостей — столы в зале, от 7 до 12 — кабинки.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="step"><i>4</i> Выберите стол</div>
+          <div class="tabs" id="zoneTabs"></div>
+          <div class="legend">
+            <span><i style="background:var(--free-bg);border:2px solid var(--free)"></i>Свободно</span>
+            <span><i style="background:var(--busy-bg);border:2px solid var(--busy)"></i>Занято</span>
+            <span><i style="background:var(--small-bg);border:2px solid #cdbda7"></i>Мало мест</span>
+          </div>
+          <div id="plan"></div>
+          <div class="hint" id="planHint"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="hidden">
+    <div class="wrap">
+      <h2 class="sec">Меню</h2>
+      <p class="sec-sub">Блюда из меню можно заказать заранее при бронировании.</p>
+      <div class="card"><div class="menu-cols" id="menuList"></div></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <h2 class="sec">Контакты</h2>
+      <div class="card"><div class="contacts" id="contactList"></div></div>
+    </div>
+  </section>
+</main>
+<footer><div class="orn" style="margin-bottom:18px"></div><span id="foot"></span></footer>
+
+<div id="modalRoot"></div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
